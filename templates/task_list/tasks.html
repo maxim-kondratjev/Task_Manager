@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Задачи{% endblock %}
+{% block extrastyles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/css/tasks.css" %}">
+{% endblock %}
+{% block content %}
+    <div class = tasks_list>
+        <ul>
+            {% for task in tasks %}
+                {% include 'task_list/task_element.html' with element=task %}
+            {% empty %}
+                <li> Задач нет</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

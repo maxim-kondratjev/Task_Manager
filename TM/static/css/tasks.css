@@ -1,0 +1,14 @@
+.tasks_list{
+    display: flex;
+    height: calc(100% - 120px);
+    padding: 0px 40px;
+    box-sizing: border-box;
+    overflow: auto;
+    flex-direction: column-reverse;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+}
+
+li{
+    padding: 3px;
+}

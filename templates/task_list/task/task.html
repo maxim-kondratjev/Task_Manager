@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} {{ task.name }} {% endblock %}
+{% block extrastyles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/css/task.css" %}">
+{% endblock %}
+{% block content %}
+    <table>
+    <tr>
+        <td>Задача:</td> <td>{{task.name}}</td>
+    </tr>
+    <tr>
+        <td>Описание:</td> <td>{{ task.description }}</td>
+    </tr>
+    <tr>
+        <td>Срок выполнения: </td> <td>{{ task.competition_date }}</td>
+    </tr>
+    </table>
+ {% endblock %}
