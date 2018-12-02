@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 
-from TM.views import TaskListView, TaskView, TMLoginView, TMLogoutView, TMRegistrationView
+from TM.views import TaskListView, TaskView, TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +26,7 @@ urlpatterns = [
     path('login/', TMLoginView.as_view(), name='login'),
     path('logout/', TMLogoutView.as_view(), name='logout'),
     path('registration/', TMRegistrationView.as_view(), name='registration'),
-    #path('task_create/', TaskCreateView.as_view(), name='message_create'),
+    path('task_creation/', TaskCreateView.as_view(), name='task_creation'),
     #path('logout/', ChatLogoutView.as_view(), name='logout'),
     #path('registration/', register_user, name='registration'),
     #path('register_user/', RegisterUser.as_view(), name='register_user'),

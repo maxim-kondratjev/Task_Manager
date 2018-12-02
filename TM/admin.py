@@ -1,5 +1,5 @@
 from django.contrib import admin
-from TM.models import Task
+from TM.models import Task, Profile
 
 
 class TaskAdmin(admin.ModelAdmin):
@@ -7,4 +7,9 @@ class TaskAdmin(admin.ModelAdmin):
     search_fields = ['name', 'id']
 
 
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ['username', 'is_superuser', ]
+
+
 admin.site.register(Task, TaskAdmin)
+admin.site.register(Profile, ProfileAdmin)

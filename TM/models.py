@@ -4,9 +4,14 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Task(models.Model):
-    name = models.CharField(max_length=80)
-    description = models.CharField(max_length=255)
-    competition_date = models.DateTimeField()
+    name = models.CharField(max_length=80, verbose_name='Задача')
+    description = models.CharField(max_length=255, verbose_name='Описание')
+    competition_date = models.DateTimeField(verbose_name='Срок выполнения')
+
+    class Meta:
+        db_table = 'Задача'
+        verbose_name = _('Задача')
+        verbose_name_plural = _('Задачи')
 
 
 class Profile(AbstractUser):
@@ -15,6 +20,6 @@ class Profile(AbstractUser):
     objects = UserManager()
 
     class Meta:
-        db_table = 'profile'
-        verbose_name = _('user profile')
-        verbose_name_plural = _('user profile')
+        db_table = 'Профиль'
+        verbose_name = _('Профиль пользователей')
+        verbose_name_plural = _('Профили пользователей')

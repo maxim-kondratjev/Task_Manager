@@ -2,13 +2,12 @@ from django.contrib import auth
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
 # Create your views here.
 from django.urls import reverse
-from django.views.generic import ListView, CreateView
-from django.views.generic.base import View, TemplateView
+from django.views.generic import CreateView
+from django.views.generic.base import TemplateView
 
-from TM.forms import LoginForm, TMRegistrationForm
+from TM.forms import LoginForm, TMRegistrationForm, TaskCreationForm
 from TM.models import Task
 
 
@@ -52,7 +51,7 @@ class TMLogoutView(LogoutView):
 
 class TMRegistrationView(CreateView):
     form_class = TMRegistrationForm
-    template_name = "registration.html"
+    template_name = 'registration.html'
 
     def get_success_url(self):
         return reverse('login')
@@ -62,4 +61,13 @@ class TMRegistrationView(CreateView):
         return super().form_valid(form)
 
 
+class TaskCreateView(CreateView):
+    form_class = TaskCreationForm
+    template_name = 'task_creation.html'
 
+    def get_success_url(self):
+        return reverse('task_list')
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)

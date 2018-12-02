@@ -9,11 +9,11 @@
         {% endblock %}
     </title>
 
-    {% block extrastyles %}{% endblock %}
-    {% block extrascripts %}{% endblock %}
     <script src="{% static "/js/jquery-3.3.1.js" %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static "/css/bootstrap.css" %}">
     <script type="text/javascript" src="{% static "/js/bootstrap.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "/css/bootstrap.css" %}">
+    {% block extrascripts %}{% endblock %}
+    {% block extrastyles %}{% endblock %}
 </head>
 <body>
 <div>

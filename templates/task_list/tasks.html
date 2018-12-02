@@ -5,6 +5,14 @@
     <link rel="stylesheet" type="text/css" href="{% static "/css/tasks.css" %}">
 {% endblock %}
 {% block content %}
+<div class = TL_Page>
+    <div class = menu_bar>
+        <form action="{% url "task_creation"%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Добавить задачу</button>
+        </div>
+        </form>
+    </div>
     <div class = tasks_list>
         <ul>
             {% for task in tasks %}
@@ -14,4 +22,5 @@
             {% endfor %}
         </ul>
     </div>
+</div>
 {% endblock %}

@@ -1,3 +1,11 @@
+.menu_bar{
+    height: calc(100% - 120px);
+    padding: 0px 60px;
+    box-sizing: border-box;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+}
+
 .tasks_list{
     display: flex;
     height: calc(100% - 120px);
@@ -12,3 +20,4 @@
 li{
     padding: 3px;
 }
+
