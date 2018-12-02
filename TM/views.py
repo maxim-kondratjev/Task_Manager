@@ -3,8 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView, LogoutView
 from django.http import HttpResponseRedirect
 # Create your views here.
-from django.urls import reverse
-from django.views.generic import CreateView
+from django.urls import reverse, reverse_lazy
+from django.views.generic import CreateView, DeleteView
 from django.views.generic.base import TemplateView
 
 from TM.forms import LoginForm, TMRegistrationForm, TaskCreationForm
@@ -61,7 +61,7 @@ class TMRegistrationView(CreateView):
         return super().form_valid(form)
 
 
-class TaskCreateView(CreateView):
+class TaskCreateView(LoginRequiredMixin, CreateView):
     form_class = TaskCreationForm
     template_name = 'task_creation.html'
 
@@ -71,3 +71,12 @@ class TaskCreateView(CreateView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
+
+class TaskRemoveView(LoginRequiredMixin, DeleteView):
+
+    def get(self, request, id,**kwargs):
+        Task.objects.filter(id=id).delete()
+        return HttpResponseRedirect(reverse('task_list'))
+
+

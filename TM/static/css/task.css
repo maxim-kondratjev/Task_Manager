@@ -21,3 +21,12 @@ background: #D8E6F3;
 th:first-child, td:first-child {
 text-align: left;
 }
+.action_bar{
+    display: block;
+    height: calc(100% - 120px);
+    width: 130px;
+    box-sizing: border-box;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+    margin:auto;
+}
