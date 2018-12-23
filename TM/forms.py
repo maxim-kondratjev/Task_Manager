@@ -3,8 +3,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UsernameField, AuthenticationForm, UserCreationForm
 from django.forms import ModelForm
 
-from TM.models import Task
-
+from TM.models import Task, Profile
 
 User = get_user_model()
 
@@ -23,7 +22,7 @@ class LoginForm(AuthenticationForm):
 
 class TMRegistrationForm(UserCreationForm):
     class Meta:
-        model = User
+        model = Profile
         fields = ["username"]
 
     def __init__(self, *args, **kwargs):
@@ -38,6 +37,16 @@ class TaskCreationForm(ModelForm):
         fields = ['name', 'description', 'competition_date']
 
     def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user')
         super().__init__(*args, **kwargs)
+        self.user = user
         for field in self.fields.values():
             field.widget.attrs.update({'class': 'form-control'})
+
+    def save(self, commit=True):
+        task = super().save(commit=False)
+        if commit:
+            task.save()
+        task.executor.set([self.user])
+        return task
+

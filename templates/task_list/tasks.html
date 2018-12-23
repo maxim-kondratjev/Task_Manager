@@ -7,11 +7,21 @@
 {% block content %}
 <div class = TL_Page>
     <div class = menu_bar>
-        <form action="{% url "task_creation"%}">
-        <div class="space">
+        <div class="button">
+            <form action="{% url "task_creation"%}">
             <button type="submit" class="btn btn-primary">Добавить задачу</button>
+            </form>
         </div>
-        </form>
+        <div class="button">
+            <form action="{% url "TL:my_task_list"%}">
+            <button type="submit" class="btn btn-primary">Мои задачи</button>
+            </form>
+        </div>
+        <div class="button">
+            <form action="{% url "TL:all_task_list"%}">
+            <button type="submit" class="btn btn-primary">Все задачи</button>
+            </form>
+        </div>
     </div>
     <div class = tasks_list>
         <ul>

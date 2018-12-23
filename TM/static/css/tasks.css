@@ -6,6 +6,10 @@
     font-size: 20px;
 }
 
+.button{
+    display: inline-block;
+}
+
 .tasks_list{
     display: flex;
     height: calc(100% - 120px);

@@ -16,16 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from TM.views import TaskListView, TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView, \
-    TaskRemoveView
+from TM.views import TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tasks_list/', TaskListView.as_view(), name='task_list'),
-    path('task/<id>/', include(('TM.urls', 'TM'))),
     path('login/', TMLoginView.as_view(), name='login'),
     path('logout/', TMLogoutView.as_view(), name='logout'),
     path('registration/', TMRegistrationView.as_view(), name='registration'),
+    path('tasks_list/', include(('TM.urls', 'TL'))),
     path('task_creation/', TaskCreateView.as_view(), name='task_creation'),
-    path('remove/<id>/', TaskRemoveView.as_view(), name='task_remove')
+    path('<id>/', include(('TM.urls', 'TM'))),
 ]

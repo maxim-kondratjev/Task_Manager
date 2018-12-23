@@ -19,10 +19,18 @@
     </table>
 </div>
 <div class=action_bar>
-        <form action="{% url 'task_remove' task.id%}">
+     {% if is_executor %}
+        <form action="{% url 'TM:task_leave' task.id%}">
         <div class="space">
-            <button type="submit" class="btn btn-primary">Удалить задачу</button>
+            <button type="submit" class="btn btn-primary">Бросить задачу</button>
         </div>
         </form>
+    {% else %}
+        <form action="{% url 'TM:task_join' task.id%}">
+        <div class="space">
+            <button type="submit" class="btn btn-primary">Присоединиться к задаче</button>
+        </div>
+        </form>
+    {% endif %}
 </div>
  {% endblock %}
