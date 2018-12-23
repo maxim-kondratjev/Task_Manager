@@ -38,12 +38,15 @@ class TaskView(LoginRequiredMixin, TemplateView):
     def get_context_data(self, id, **kwargs):
         data = super().get_context_data(**kwargs)
         user = self.request.user
-        print(Task.objects.get(id=id).executor.values('id'))
-        print(user.id)
         data['is_executor'] = False
-        if Task.objects.get(id=id).executor.filter(id=user.id).exists():
-            print('True')
+        data['last_executor'] = False
+        task_exec = Task.objects.get(id=id).executor
+        cur_user = task_exec.filter(id=user.id)
+        print(task_exec.all().count())
+        if cur_user.exists():
             data['is_executor'] = True
+            if task_exec.all().count() == 1:
+                data['last_executor'] = True
         data['task'] = Task.objects.get(id=id)
         return data
 
@@ -92,7 +95,7 @@ class TaskCreateView(LoginRequiredMixin, CreateView):
     template_name = 'task_creation.html'
 
     def get_success_url(self):
-        return reverse('task_list')
+        return reverse('TL:my_task_list')
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
