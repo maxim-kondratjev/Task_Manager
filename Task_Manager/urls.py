@@ -13,10 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 from TM.views import TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView
+from Task_Manager import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +28,5 @@ urlpatterns = [
     path('tasks_list/', include(('TM.urls', 'TL'))),
     path('task_creation/', TaskCreateView.as_view(), name='task_creation'),
     path('<id>/', include(('TM.urls', 'TM'))),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

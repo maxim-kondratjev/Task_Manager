@@ -23,7 +23,7 @@ class LoginForm(AuthenticationForm):
 class TMRegistrationForm(UserCreationForm):
     class Meta:
         model = Profile
-        fields = ["username"]
+        fields = ['username', 'avatar']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -34,7 +34,7 @@ class TMRegistrationForm(UserCreationForm):
 class TaskCreationForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['name', 'description', 'competition_date']
+        fields = ['name', 'description', 'competition_date', 'task_image']
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user')

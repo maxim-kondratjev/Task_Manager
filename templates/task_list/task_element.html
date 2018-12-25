@@ -1,1 +1,14 @@
-<li><a href="{% url 'TM:task_url' element.id %}">{{ element.name }}</a></li>
+<li>
+    <div class="task">
+        <div class = 'task_image'
+             style="background:
+                     {% if task.task_image %}
+                         url('/media/{{task.task_image}}') no-repeat center;
+                         background-size: cover;"></div>
+                     {% else %}
+                         url('/media/task_images/default_task_image.png') no-repeat center;
+                     background-size: cover;"></div>
+                     {% endif %}
+        <a href="{% url 'TM:task_url' element.id %}">{{ element.name }}</a>
+    </div>
+</li>

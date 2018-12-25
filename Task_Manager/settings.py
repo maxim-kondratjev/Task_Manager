@@ -50,9 +50,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Task_Manager.urls'
-AUTH_USER_MODEL = 'TM.Profile'
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -127,4 +124,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
 LOGIN_URL = '/login/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+ROOT_URLCONF = 'Task_Manager.urls'
+AUTH_USER_MODEL = 'TM.Profile'
+
+LOGIN_REDIRECT_URL = '/tasks_list/my/'
+
+LOGOUT_REDIRECT_URL = '/login/'
+
