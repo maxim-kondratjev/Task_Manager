@@ -3,31 +3,11 @@
 {% block title %}Задачи{% endblock %}
 {% block extrastyles %}
     <link rel="stylesheet" type="text/css" href="{% static "/css/tasks.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/menu.css" %}">
 {% endblock %}
 {% block content %}
+    {% include 'menu.html' with user=user %}
 <div class = TL_Page>
-    <div class = menu_bar>
-        <div class="button">
-            <form action="{% url "task_creation"%}">
-            <button type="submit" class="btn btn-primary">Добавить задачу</button>
-            </form>
-        </div>
-        <div class="button">
-            <form action="{% url "TL:my_task_list"%}">
-            <button type="submit" class="btn btn-primary">Мои задачи</button>
-            </form>
-        </div>
-        <div class="button">
-            <form action="{% url "TL:all_task_list"%}">
-            <button type="submit" class="btn btn-primary">Все задачи</button>
-            </form>
-        </div>
-        <div class="button">
-            <form action="{% url "logout"%}">
-            <button type="submit" class="btn btn-primary">Выйти</button>
-            </form>
-        </div>
-    </div>
     <div class = tasks_list>
         <ul>
             {% for task in tasks %}

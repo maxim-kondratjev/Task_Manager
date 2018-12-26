@@ -50,3 +50,21 @@ class TaskCreationForm(ModelForm):
         task.executor.set([self.user])
         return task
 
+
+class UpdateProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = ("username", "avatar", 'description')
+
+        def __init__(self, *args, **kwargs):
+            user = kwargs.pop('user')
+            super().__init__(*args, **kwargs)
+            self.user = user
+            for field in self.fields.values():
+                field.widget.attrs.update({'class': 'form-control'})
+
+        def save(self, commit=True):
+            profile = super().save(commit=False)
+            if commit:
+                profile.save()
+            return profile

@@ -1,0 +1,39 @@
+ <div class = menu_bar>
+     <div class="left_nav">
+        <div class="button">
+            <form action="{% url "task_creation"%}">
+            <button type="submit" class="btn btn-primary">Добавить задачу</button>
+            </form>
+        </div>
+        <div class="button">
+            <form action="{% url "task_list" whose='my'%}">
+            <button type="submit" class="btn btn-primary">Мои задачи</button>
+            </form>
+        </div>
+        <div class="button">
+            <form action="{% url "task_list" whose='all'%}">
+            <button type="submit" class="btn btn-primary">Все задачи</button>
+            </form>
+        </div>
+     </div>
+     <div class="rigth_nav">
+        <div class="button logout_btn">
+            <form action="{% url "logout"%}">
+            <button type="submit" class="btn btn-primary">Выйти</button>
+            </form>
+        </div>
+        <div class="current_user">
+            <div class = 'user_avatar'
+             style="background:
+                         url('/media/{{user.avatar}}') no-repeat center;
+                         background-size: cover;">
+                <form action="{% url "P:profile" %}">
+                    <button type="submit" class="btn btn-primary" style="opacity: 0"></button>
+                </form>
+            </div>
+            <div class = 'username'>
+                {{ user.username }}
+            </div>
+        </div>
+     </div>
+ </div>

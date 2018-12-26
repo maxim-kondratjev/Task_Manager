@@ -3,42 +3,50 @@
 {% block title %} {{ task.name }} {% endblock %}
 {% block extrastyles %}
     <link rel="stylesheet" type="text/css" href="{% static "/css/task.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "/css/menu.css" %}">
 {% endblock %}
 {% block content %}
-<div class=table>
-    <table>
-    <tr>
-        <td>Задача:</td> <td>{{task.name}}</td>
-    </tr>
-    <tr>
-        <td>Описание:</td> <td>{{ task.description }}</td>
-    </tr>
-    <tr>
-        <td>Срок выполнения: </td> <td>{{ task.competition_date }}</td>
-    </tr>
-    </table>
-</div>
-<div class=action_bar>
-     {% if is_executor %}
-        {% if last_executor %}
-            <form action="{% url 'TM:task_remove' task.id%}">
-            <div class="space">
-                <button type="submit" class="btn btn-primary">Удалить задачу</button>
-            </div>
-            </form>
+    {% include 'menu.html' with user=user %}
+    <div class = "task">
+        <div class='task_image_full'
+            style="background: url('/media/{{task.task_image}}') no-repeat center;
+                             background-size: contain;">
+        </div>
+        <div class = "description">
+            <table>
+            <tr>
+                <td>Задача:</td> <td>{{task.name}}</td>
+            </tr>
+            <tr>
+                <td>Описание:</td> <td>{{ task.description }}</td>
+            </tr>
+            <tr>
+                <td>Срок выполнения: </td> <td>{{ task.competition_date }}</td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    <div class=action_bar>
+         {% if is_executor %}
+            {% if last_executor %}
+                <form action="{% url 'TM:task_remove' task.id%}">
+                <div class="space">
+                    <button type="submit" class="btn btn-primary">Удалить задачу</button>
+                </div>
+                </form>
+            {% else %}
+                <form action="{% url 'TM:task_leave' task.id%}">
+                <div class="space">
+                    <button type="submit" class="btn btn-primary">Бросить задачу</button>
+                </div>
+                </form>
+            {% endif %}
         {% else %}
-            <form action="{% url 'TM:task_leave' task.id%}">
+            <form action="{% url 'TM:task_join' task.id%}">
             <div class="space">
-                <button type="submit" class="btn btn-primary">Бросить задачу</button>
+                <button type="submit" class="btn btn-primary">Присоединиться к задаче</button>
             </div>
             </form>
         {% endif %}
-    {% else %}
-        <form action="{% url 'TM:task_join' task.id%}">
-        <div class="space">
-            <button type="submit" class="btn btn-primary">Присоединиться к задаче</button>
-        </div>
-        </form>
-    {% endif %}
-</div>
+    </div>
  {% endblock %}

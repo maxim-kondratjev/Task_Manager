@@ -4,8 +4,10 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Profile(AbstractUser):
-    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True, default=None, verbose_name='Аватар')
-
+    avatar = models.ImageField(upload_to='avatars/', blank=True, null=True,
+                               default='avatars/default_avatar.png',
+                               verbose_name='Аватар')
+    description = models.CharField(max_length=255, verbose_name='О себе', blank=True, null=True)
     objects = UserManager()
 
     class Meta:
@@ -14,12 +16,16 @@ class Profile(AbstractUser):
         verbose_name_plural = _('Профили пользователей')
 
 
+Profile._meta.get_field('username').verbose_name = 'Имя пользователя'
+
+
 class Task(models.Model):
     name = models.CharField(max_length=80, verbose_name='Задача')
     description = models.CharField(max_length=255, verbose_name='Описание')
     competition_date = models.DateTimeField(verbose_name='Срок выполнения')
     executor = models.ManyToManyField(Profile, verbose_name='Исполнитель')
     task_image = models.ImageField(upload_to='task_images/', blank=True, null=True,
+                                   default='task_images/default_task_image.png',
                                    verbose_name='Изображение')
 
     class Meta:

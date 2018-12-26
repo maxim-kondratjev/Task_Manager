@@ -1,0 +1,40 @@
+.menu_bar{
+    height: calc(100% - 120px);
+    padding: 0px 60px;
+    box-sizing: border-box;
+    border: 1px solid #f1f1f1;
+    font-size: 20px;
+}
+
+.button{
+    display: inline-block;
+}
+
+.user_avatar {
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.current_user{
+    display: inline-block;
+}
+
+.username{
+    display: inline-block;
+}
+
+.left_nav{
+    display: inline-block;
+    width: 49%;
+    text-align: left;
+}
+
+.rigth_nav{
+    display: inline-block;
+    width: 49%;
+    text-align: right;
+}
