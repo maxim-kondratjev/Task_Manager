@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63204626-1311-4829-ba44-99d48a268152" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Task_Manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task_Manager/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="63204626-1311-4829-ba44-99d48a268152" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -318,6 +316,12 @@
               <item name="Task_Manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="Task_Manager" type="462c0819:PsiDirectoryNode" />
               <item name="TM" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Task_Manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Task_Manager" type="462c0819:PsiDirectoryNode" />
+              <item name="TM" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -353,19 +357,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="H:\BMSTU\РИП\Task_Manager\TM\static\js" />
-      <recent name="H:\BMSTU\РИП\Task_Manager\media\avatars" />
-      <recent name="H:\BMSTU\РИП\Task_Manager\media\task_images" />
-      <recent name="H:\BMSTU\РИП\Task_Manager" />
-      <recent name="H:\BMSTU\РИП\Task_Manager\templates\task_list" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\BMSTU\РИП\Task_Manager\TM\static" />
       <recent name="H:\BMSTU\РИП\Task_Manager\templates" />
       <recent name="H:\BMSTU\РИП\Task_Manager\TM\static\css" />
       <recent name="H:\BMSTU\РИП\Task_Manager\TM\static\js" />
       <recent name="H:\BMSTU\РИП\Task_Manager\TM" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\BMSTU\РИП\Task_Manager\TM\static\js" />
+      <recent name="H:\BMSTU\РИП\Task_Manager\media\avatars" />
+      <recent name="H:\BMSTU\РИП\Task_Manager\media\task_images" />
+      <recent name="H:\BMSTU\РИП\Task_Manager" />
+      <recent name="H:\BMSTU\РИП\Task_Manager\templates\task_list" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -428,9 +432,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29597315" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29597315" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -444,7 +447,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.3106383" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49966952" visible="true" weight="0.27659574" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49966952" visible="true" weight="0.27659574" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32998565" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
