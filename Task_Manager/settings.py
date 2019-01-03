@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'Task_Manager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'TM_DB',
+        'NAME': 'maximusman91198$TM_DB',
         'USER': 'maximusman91198',
         'PASSWORD': 'admin12345',
         'HOST': 'maximusman91198.mysql.pythonanywhere-services.com',
