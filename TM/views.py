@@ -7,26 +7,33 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 from django.shortcuts import render
 from django.urls import reverse
-from django.views.generic import CreateView, DeleteView, UpdateView, DetailView
+from django.views.generic import CreateView, DeleteView, UpdateView, DetailView, ListView
 from django.views.generic.base import TemplateView, View
+from django.views.generic.list import MultipleObjectMixin
 
-from TM.forms import LoginForm, TMRegistrationForm, TaskCreationForm, UpdateProfileForm
+from TM.forms import LoginForm, TMRegistrationForm, TaskCreationForm, UpdateProfileForm, TaskCreateForm
 from TM.models import Task, Profile
 
 User = get_user_model()
 
 
-class TaskListView(LoginRequiredMixin, TemplateView):
+class TaskListView(LoginRequiredMixin, ListView):
+    model = Task
     template_name = 'task_list/tasks.html'
+    context_object_name = "tasks"
+    paginate_by = 5
 
-    def get_context_data(self, whose, **kwargs):
+    def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
         data['user'] = self.request.user
-        if whose == 'my':
-            data['tasks'] = Task.objects.filter(executor=self.request.user.id).order_by('id')
-        if whose == 'all':
-            data['tasks'] = Task.objects.all().order_by('id')
+        data['form_create'] = TaskCreateForm(self.request.user)
         return data
+
+    def get_queryset(self):
+        if self.kwargs['whose'] == 'my':
+            return self.model.objects.filter(executor=self.request.user.id).order_by('id')
+        if self.kwargs['whose'] == 'all':
+            return self.model.objects.all().order_by('id')
 
 
 class TaskView(LoginRequiredMixin, TemplateView):
@@ -65,7 +72,7 @@ class TMLoginView(LoginView):
         return data
 
     def get_success_url(self):
-        return reverse('task_list',  args=['my'])
+        return reverse('task_list',  kwargs={'whose': 'my'})
 
 
 class TMLogoutView(LogoutView):
@@ -89,9 +96,32 @@ class TMRegistrationView(CreateView):
 class TaskCreateView(LoginRequiredMixin, CreateView):
     form_class = TaskCreationForm
     template_name = 'task_creation.html'
+    model = Task
+    #fields = ['name', 'description', 'competition_date', 'task_image']
 
     def get_success_url(self):
         return reverse('task_list', kwargs={'whose': 'my'})
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['user'] = self.request.user
+        return kwargs
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+
+class FastTaskCreateView(LoginRequiredMixin, CreateView):
+    form_class = TaskCreationForm
+    template_name = 'task_list/task_element.html'
+    model = Task
+    #fields = ['name', 'description', 'competition_date', 'task_image']
+
+    def get_context_data(self, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['element'] = Task.objects.order_by('-id')[0]
+        return data
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -154,3 +184,14 @@ class UpdateProfileView(LoginRequiredMixin, View):
         return super().form_valid(form)
 
 
+class TaskListPageView(ListView):
+    model = Task
+    template_name = 'task_list/page.html'
+    context_object_name = "tasks"
+    paginate_by = 5
+
+    def get_queryset(self):
+        if self.kwargs['whose'] == 'my':
+            return Task.objects.filter(executor=self.request.user.id).order_by('id')
+        if self.kwargs['whose'] == 'all':
+            return Task.objects.all().order_by('id')

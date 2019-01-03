@@ -2,7 +2,7 @@
     <div class="task">
         <div class = 'task_image'
              style="background:
-                         url('/media/{{task.task_image}}') no-repeat center;
+                         url('/media/{{element.task_image}}') no-repeat center;
                          background-size: cover;"></div>
         <a href="{% url 'TM:task_url' element.id %}">{{ element.name }}</a>
     </div>

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, reverse
 
 from TM.views import TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView, TaskListView, ProfileView, \
-    UpdateProfileView
+    UpdateProfileView, TaskListPageView, FastTaskCreateView
 from Task_Manager import settings
 
 urlpatterns = [
@@ -26,9 +26,13 @@ urlpatterns = [
     path('login/', TMLoginView.as_view(), name='login'),
     path('logout/', TMLogoutView.as_view(), name='logout'),
     path('registration/', TMRegistrationView.as_view(), name='registration'),
-    path('tasks_list/<whose>/', TaskListView.as_view(), name='task_list'),
+    path('tasks_list/<str:whose>/', TaskListView.as_view(), name='task_list'),
+    path('tasks_list/<str:whose>/page/', TaskListPageView.as_view(), name='task_page'),
     path('task_creation/', TaskCreateView.as_view(), name='task_creation'),
+    path('fast_task_creation/',
+         FastTaskCreateView.as_view(success_url='/fast_task_creation/'),
+         name='fast_task_creation'),
     path('profile/', include(('TM.profile_urls', 'P'))),
-    path('<id>/', include(('TM.task_urls', 'TM'))),
+    path('<int:id>/', include(('TM.task_urls', 'TM'))),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

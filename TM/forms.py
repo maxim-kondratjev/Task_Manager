@@ -68,3 +68,23 @@ class UpdateProfileForm(ModelForm):
             if commit:
                 profile.save()
             return profile
+
+
+class TaskCreateForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = ['name', 'description', 'competition_date', 'task_image']
+
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = user
+        for field in self.fields.values():
+            field.widget.attrs.update({'class': 'form-control'})
+
+    def save(self, commit=True):
+        task = super().save(commit=False)
+        if commit:
+            task.save()
+        task.executor.set([self.user])
+        return task
+
