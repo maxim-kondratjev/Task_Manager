@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63204626-1311-4829-ba44-99d48a268152" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Task_Manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task_Manager/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task_Manager/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task_Manager/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,7 +59,7 @@
           <entry key="dummy" value="10" />
           <entry key="html" value="3356" />
           <entry key="js" value="64" />
-          <entry key="py" value="6458" />
+          <entry key="py" value="6478" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -69,18 +68,21 @@
           <entry key="HTML" value="3356" />
           <entry key="JavaScript" value="64" />
           <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="6484" />
+          <entry key="Python" value="6504" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Task_Manager/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="275">
+              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+              <folding>
+                <element signature="e#636#678#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -119,10 +121,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
+            <state relative-caret-position="2074">
               <caret line="122" column="59" lean-forward="true" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
             </state>
           </provider>
@@ -228,8 +230,8 @@
         <option value="$PROJECT_DIR$/TM/static/js/tasks.js" />
         <option value="$PROJECT_DIR$/templates/task_list/page.html" />
         <option value="$PROJECT_DIR$/TM/static/css/tasks.css" />
-        <option value="$PROJECT_DIR$/Task_Manager/urls.py" />
         <option value="$PROJECT_DIR$/Task_Manager/settings.py" />
+        <option value="$PROJECT_DIR$/Task_Manager/urls.py" />
       </list>
     </option>
   </component>
@@ -732,17 +734,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task_Manager/urls.py">
+    <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="2074">
+          <caret line="122" column="59" lean-forward="true" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
+    <entry file="file://$PROJECT_DIR$/Task_Manager/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="122" column="59" lean-forward="true" selection-start-line="122" selection-start-column="59" selection-end-line="122" selection-end-column="59" />
+        <state relative-caret-position="275">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="e#636#678#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
