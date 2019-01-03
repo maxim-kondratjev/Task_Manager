@@ -79,7 +79,7 @@ DATABASES = {
         'NAME': 'TM_DB',
         'USER': 'maximusman91198',
         'PASSWORD': 'admin12345',
-        'HOST': 'localhost',
+        'HOST': 'maximusman91198.mysql.pythonanywhere-services.com',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'},
         'TEST_CHARSET': 'utf8'
