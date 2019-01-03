@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'TM_DB',
-        'USER': 'dbuser',
-        'PASSWORD': '123',
+        'USER': 'maximusman91198',
+        'PASSWORD': 'admin12345',
         'HOST': 'localhost',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'},
