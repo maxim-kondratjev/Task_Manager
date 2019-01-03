@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, reverse
+from django.urls import path, include
 
-from TM.views import TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView, TaskListView, ProfileView, \
-    UpdateProfileView, TaskListPageView, FastTaskCreateView
+from TM.views import TMLoginView, TMLogoutView, TMRegistrationView, TaskCreateView, TaskListView, \
+     TaskListPageView, FastTaskCreateView
 from Task_Manager import settings
 
 urlpatterns = [
