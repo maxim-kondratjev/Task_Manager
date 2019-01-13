@@ -1,4 +1,3 @@
-*.txt
 *.png
 !default_task_image.png
 !default_avatar.png

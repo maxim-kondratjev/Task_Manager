@@ -24,7 +24,7 @@ SECRET_KEY = 'g5h-at)04f#a(3=*a#if*148ht*9=k^6m(fxzmz16w0pc-6ey0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['maximusman91198.pythonanywhere.com']
+ALLOWED_HOSTS = ['maxfirst.myrip.ru']
 
 
 # Application definition
@@ -75,10 +75,10 @@ WSGI_APPLICATION = 'Task_Manager.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'maximusman91198$TM_DB',
-        'USER': 'maximusman91198',
-        'PASSWORD': 'admin12345',
-        'HOST': 'maximusman91198.mysql.pythonanywhere-services.com',
+        'NAME': 'tmdb',
+        'USER': 'dbuser',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
         'PORT': 3306,
         'OPTIONS': {'charset': 'utf8'},
         'TEST_CHARSET': 'utf8'
