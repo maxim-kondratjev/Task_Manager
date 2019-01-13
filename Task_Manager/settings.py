@@ -24,7 +24,7 @@ SECRET_KEY = 'g5h-at)04f#a(3=*a#if*148ht*9=k^6m(fxzmz16w0pc-6ey0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['maxfirst.myrip.ru']
+ALLOWED_HOSTS = ['firstmax.myrip.ru']
 
 
 # Application definition

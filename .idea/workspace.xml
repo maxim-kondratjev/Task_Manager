@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63204626-1311-4829-ba44-99d48a268152" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TM/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/TM/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task_Manager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task_Manager/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +62,7 @@
           <entry key="dummy" value="10" />
           <entry key="html" value="3356" />
           <entry key="js" value="65" />
-          <entry key="py" value="6516" />
+          <entry key="py" value="6517" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -73,7 +72,7 @@
           <entry key="HTML" value="3356" />
           <entry key="JavaScript" value="65" />
           <entry key="PLAIN_TEXT" value="14" />
-          <entry key="Python" value="6542" />
+          <entry key="Python" value="6543" />
         </counts>
       </usages-collector>
     </session>
@@ -121,16 +120,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-748">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="204">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TM/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -234,8 +233,8 @@
         <option value="$PROJECT_DIR$/TM/static/js/tasks.js" />
         <option value="$PROJECT_DIR$/TM/static/js/update.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/Task_Manager/settings.py" />
         <option value="$PROJECT_DIR$/TM/models.py" />
+        <option value="$PROJECT_DIR$/Task_Manager/settings.py" />
       </list>
     </option>
   </component>
@@ -702,17 +701,17 @@
     <entry file="file://$PROJECT_DIR$/TM/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TM/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task_Manager/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
