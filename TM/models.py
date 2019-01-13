@@ -10,6 +10,9 @@ class Profile(AbstractUser):
     description = models.CharField(max_length=255, verbose_name='О себе', blank=True, null=True)
     objects = UserManager()
 
+    def __unicode__(self):
+        return u'%s' % (self.some_field)
+
     class Meta:
         db_table = 'Профиль'
         verbose_name = _('Профиль пользователей')
@@ -27,6 +30,9 @@ class Task(models.Model):
     task_image = models.ImageField(upload_to='task_images/', blank=True, null=True,
                                    default='task_images/default_task_image.png',
                                    verbose_name='Изображение')
+
+    def __unicode__(self):
+        return u'%s' % (self.some_field)
 
     class Meta:
         db_table = 'Задача'
